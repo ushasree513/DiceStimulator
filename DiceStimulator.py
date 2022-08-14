@@ -3,8 +3,8 @@ from tkinter import *
 
 root = Tk()
 root.geometry("800x500")
-##my_label=Label(root, text="Hello World, I am using tkinter")
-##my_label.pack()
+my_label=Label(root, text="Lets play it...")
+my_label.pack()
 
 
 def roll():
