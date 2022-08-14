@@ -1,24 +1,23 @@
+from email.mime import image
 import random
+from textwrap import fill
 from tkinter import *
 
 root = Tk()
 root.geometry("800x500")
-my_label=Label(root, text="Lets play it...")
-my_label.pack()
+my_label=Label(root, text="Lets play it...",font=('BOLD',50),bg="pink")
+my_label.pack(fill=X)
+
+LabelDisplay = Label(root,font=('bold',200))
+
 
 
 def roll():
-
-    value = True
-
-    while(value):
-        Result = random.randint(1,6)
-        print(Result)
-        ##CollectInfo = input("Do you want to play again? (n/y)")
+    Result = random.randint(1,6)
+    LabelDisplay.config(text=Result)
+    LabelDisplay.pack()
+    
         
-        if(Result == 6):
-            continue
-        else:
-            break   
+    
 b1 = Button(root, text="Lets roll...", command=roll).pack()
 root.mainloop()
