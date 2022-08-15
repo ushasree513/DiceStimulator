@@ -2,6 +2,9 @@ from email.mime import image
 import random
 from textwrap import fill
 from tkinter import *
+from turtle import color
+from unittest import result
+from PIL import ImageTk,Image
 
 root = Tk()
 root.geometry("800x500")
@@ -16,8 +19,14 @@ def roll():
     Result = random.randint(1,6)
     LabelDisplay.config(text=Result)
     LabelDisplay.pack()
+
+def rollRed():
+    Output = random.randint(3,6)
+    LabelDisplay.config(text=Output)
+    LabelDisplay.pack()
     
-        
-    
+ImageRed = ImageTk.PhotoImage(Image.open('Red.PNG'))
+
+bR = Button(root,image=ImageRed,command=rollRed).pack()
 b1 = Button(root, text="Lets roll...",font=('Normal'), command=roll).pack()
 root.mainloop()
